@@ -18,7 +18,7 @@ const Footer = () => {
             <div></div>
             <div>
               <input
-                className="border-b-2 p-3 border-black w-72"
+                className="border-b p-3 border-black w-72"
                 placeholder="email@example.com"
               />
               <div className="p-6">
@@ -33,13 +33,19 @@ const Footer = () => {
             <p className="text-center items-center text-2xl p-6">SNS</p>
             <div className=" flex flex-row justify-center items-center">
               <div className="px-5">
-                <Facebook />
+                <a href="https://www.facebook.com/officialomocat">
+                  <Facebook />
+                </a>
               </div>
               <div className="px-5">
-                <Twitter />
+                <a href="https://twitter.com/_omocat">
+                  <Twitter />
+                </a>
               </div>
               <div className="px-5">
-                <InstagramIcon />
+                <a href="https://www.instagram.com/omocat/">
+                  <InstagramIcon />
+                </a>
               </div>
             </div>
           </div>

@@ -19,7 +19,7 @@ export default function Home() {
       </div>
       <div className="relative">
         <Link
-          href="/OmoriPage1"
+          href="/collections/omori"
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black text-white w-24 p-4 text-center text-sm"
         >
           OMORI
@@ -38,7 +38,7 @@ export default function Home() {
         />
       </div>
       <div className="relative">
-        <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black text-white w-56 p-4 text-center text-sm">
+        <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black text-white w-60 p-4 text-center text-sm">
           OMOCAT x hololive Engish
         </p>
         <Image
@@ -72,9 +72,12 @@ export default function Home() {
         />
       </div>
       <div className="relative">
-        <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black text-white w-60 p-4 text-center text-sm">
+        <a
+          href="https://www.pokemoncenter.com/omocat"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black text-white w-60 p-4 text-center text-sm"
+        >
           OMOCAT x Pokémon© Center
-        </p>
+        </a>
         <Image
           src={Banner4Full}
           alt="pkmn"

@@ -25,92 +25,94 @@ const GamersCarousel = () => {
     slidesToScroll: 1,
   };
   return (
-    <Slider {...settings}>
-      <Image
-        src={Gamers1Full}
-        alt="omocat"
-        width={0}
-        height={0}
-        sizes="100vw"
-        style={{
-          width: "100%",
-          height: "650px",
-          objectFit: "contain",
-        }}
-      />
-      <Image
-        src={Gamers2Full}
-        alt="omocat"
-        width={0}
-        height={0}
-        sizes="100vw"
-        style={{
-          width: "100%",
-          height: "650px",
-          objectFit: "contain",
-        }}
-      />
-      <Image
-        src={Gamers3Full}
-        alt="omocat"
-        width={0}
-        height={0}
-        sizes="100vw"
-        style={{
-          width: "100%",
-          height: "650px",
-          objectFit: "contain",
-        }}
-      />
-      <Image
-        src={Gamers4Full}
-        alt="omocat"
-        width={0}
-        height={0}
-        sizes="100vw"
-        style={{
-          width: "100%",
-          height: "650px",
-          objectFit: "contain",
-        }}
-      />
-      <Image
-        src={Gamers5Full}
-        alt="omocat"
-        width={0}
-        height={0}
-        sizes="100vw"
-        style={{
-          width: "100%",
-          height: "650px",
-          objectFit: "contain",
-        }}
-      />
-      <Image
-        src={Gamers6Full}
-        alt="omocat"
-        width={0}
-        height={0}
-        sizes="100vw"
-        style={{
-          width: "100%",
-          height: "650px",
-          objectFit: "contain",
-        }}
-      />
-      <Image
-        src={Gamers7Full}
-        alt="omocat"
-        width={0}
-        height={0}
-        sizes="100vw"
-        style={{
-          width: "100%",
-          height: "650px",
-          objectFit: "contain",
-        }}
-      />
-    </Slider>
+    <div className="-z-10">
+      <Slider {...settings}>
+        <Image
+          src={Gamers1Full}
+          alt="omocat"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{
+            width: "100%",
+            height: "650px",
+            objectFit: "contain",
+          }}
+        />
+        <Image
+          src={Gamers2Full}
+          alt="omocat"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{
+            width: "100%",
+            height: "650px",
+            objectFit: "contain",
+          }}
+        />
+        <Image
+          src={Gamers3Full}
+          alt="omocat"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{
+            width: "100%",
+            height: "650px",
+            objectFit: "contain",
+          }}
+        />
+        <Image
+          src={Gamers4Full}
+          alt="omocat"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{
+            width: "100%",
+            height: "650px",
+            objectFit: "contain",
+          }}
+        />
+        <Image
+          src={Gamers5Full}
+          alt="omocat"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{
+            width: "100%",
+            height: "650px",
+            objectFit: "contain",
+          }}
+        />
+        <Image
+          src={Gamers6Full}
+          alt="omocat"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{
+            width: "100%",
+            height: "650px",
+            objectFit: "contain",
+          }}
+        />
+        <Image
+          src={Gamers7Full}
+          alt="omocat"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{
+            width: "100%",
+            height: "650px",
+            objectFit: "contain",
+          }}
+        />
+      </Slider>
+    </div>
   );
 };
 

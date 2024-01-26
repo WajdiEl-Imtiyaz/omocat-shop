@@ -24,7 +24,7 @@ const OmoriCarousel = () => {
   };
 
   return (
-    <Link href="/OmoriPage1">
+    <Link href="/collections/omori">
       <Slider {...settings}>
         <Image
           src={Omori1Full}

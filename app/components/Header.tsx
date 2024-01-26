@@ -1,22 +1,20 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
-import { AlignJustify, Search, ShoppingCart, UserRound } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import SearchTab from "./SearchTab";
+import AccountTab from "./AccountTab";
+import CartTab from "./CartTab";
+import Link from "next/link";
 
 const Header = () => {
   return (
-    <div>
-      <div className=" bg-black ">
-        <p className="font-sans text-white text-center py-3 text-sm tracking-wider">
-          Due to the holiday season and recent releases, orders may take up to
-          3-4 weeks to ship.
-        </p>
-      </div>
-      <div className="bg-white flex flex-row h-24 sticky top-0 z-10">
-        <div className="basis-1/3 flex justify-start items-center p-2 lg:hidden">
-          <AlignJustify />
-        </div>
-        <div className="basis-1/3 flex justify-start items-center p-2 sm:flex"></div>
-        <div className="basis-1/3 flex justify-center items-center">
+    <div className="sticky top-0 z-10 ">
+      <div className="flex justify-between items-center bg-white h-24">
+        <div></div>{" "}
+        {/* This empty div is needed to balance the space distribution */}
+        <div className="pl-64 flex justify-center items-center">
           <a href="/">
             <Image
               src="/img/omocat_logo_original_400_53040177-83e4-4a16-bdd6-e5c2f4a7eb5a.png"
@@ -31,95 +29,112 @@ const Header = () => {
             />
           </a>
         </div>
-
-        <div className=" basis-1/3 flex flex-row items-center">
-          <div className=" basis-1/2 flex justify-center">
-            <Search />
+        <div className=" flex flex-row items-center justify justify-between ">
+          <div className="flex justify-center p-6">
+            <SearchTab />
           </div>
-          <div className="hidden sm:flex">
-            <UserRound />
+          <div className="flex justify-center p-6 ">
+            <AccountTab />
           </div>
-          <div className="basis-1/2 flex justify-center">
-            <ShoppingCart />
+          <div className="flex justify-center p-6">
+            <CartTab />
           </div>
         </div>
       </div>
 
       <div className="hidden lg:flex flex-row justify-between items-center sticky top-20 z-10 px-96 bg-white text-black">
         <div className="flex justify-center items-center p-4 relative group w-[200px]">
-          <p className="text-sm">ALL</p>
+          <p className="text-sm group-hover:opacity-50">ALL</p>
         </div>
         <div className="flex justify-center items-center p-4 relative group w-[200px]">
-          <p className="text-sm">COLLECTIONS</p>
+          <p className="text-sm  flex items-center group-hover:opacity-50">
+            COLLECTIONS <ChevronDown />
+          </p>
           <div className="hidden absolute bg-white top-full p-4 space-y-2 group-hover:block w-[200px] transition">
-            <a href="#" className="text-sm block ">
+            <Link href="#" className="text-sm block py-1 ">
               HOLOLIVE GAMERS
-            </a>
-            <a href="#" className="text-sm block ">
+            </Link>
+            <Link href="#" className="text-sm block py-1 ">
               HOLOLIVE MEET
-            </a>
-            <a href="#" className="text-sm block ">
+            </Link>
+            <Link href="#" className="text-sm block py-1  ">
               HOLOLIVE EN
-            </a>
-            <a href="/OmoriPage1" className="text-sm block ">
+            </Link>
+            <Link
+              href="/collections/omori"
+              className="text-sm block py-1  hover:opacity-50"
+            >
               OMORI
-            </a>
-            <a href="#" className="text-sm block ">
+            </Link>
+            <Link href="#" className="text-sm block py-1  ">
               BANG DREAM!
-            </a>
-            <a href="#" className="text-sm block ">
+            </Link>
+            <Link href="#" className="text-sm block py-1  ">
               HATSUNE MIKU
-            </a>
-            <a href="#" className="text-sm block ">
+            </Link>
+            <Link href="#" className="text-sm block py-1  ">
               ORIGINAL
-            </a>
-            <a href="#" className="text-sm block ">
+            </Link>
+            <Link
+              href="https://www.pokemoncenter.com/omocat"
+              className="text-sm block py-1 "
+            >
               Pokémon© Center
-            </a>
+            </Link>
           </div>
         </div>
 
         <div className="flex justify-center items-center p-4 relative group w-[200px]">
-          <p className="text-sm">APPAREL</p>
+          <p className="text-sm flex items-center group-hover:opacity-50">
+            APPAREL <ChevronDown />
+          </p>
           <div className="hidden absolute bg-white top-full p-4 space-y-2 group-hover:block w-[200px] ">
-            <p className="text-sm">SHIRTS</p>
-            <p className="text-sm">SWEATERS</p>
-            <p className="text-sm">JACKET & HOODIES</p>
+            <p className="text-sm block py-1 ">SHIRTS</p>
+            <p className="text-sm block py-1 ">SWEATERS</p>
+            <p className="text-sm block py-1 ">JACKET & HOODIES</p>
           </div>
         </div>
 
         <div className="flex justify-center items-center p-4 relative group w-[200px]">
-          <p className="text-sm">ACCESSORIES</p>
+          <p className="text-sm flex items-center group-hover:opacity-50">
+            ACCESSORIES <ChevronDown />
+          </p>
           <div className="hidden absolute bg-white top-full p-4 space-y-2 group-hover:block w-[200px]">
-            <p className="text-sm">HATS</p>
-            <p className="text-sm">PLUSHIES</p>
-            <p className="text-sm">KEYCHAINS & STANDS</p>
-            <p className="text-sm">PINS</p>
-            <p className="text-sm">STICKERS</p>
-            <p className="text-sm">SKATE DECKS</p>
+            <p className="text-sm block py-1 ">HATS</p>
+            <p className="text-sm block py-1 ">PLUSHIES</p>
+            <p className="text-sm block py-1 ">KEYCHAINS & STANDS</p>
+            <p className="text-sm block py-1 ">PINS</p>
+            <p className="text-sm block py-1 ">STICKERS</p>
+            <p className="text-sm block py-1 ">SKATE DECKS</p>
           </div>
         </div>
 
-        <div className="flex justify-center items-center p-4 relative group w-[200px]">
-          <p className="text-sm">PRINTED MATTER</p>
+        <div className="flex justify-center items-center p-4 relative group w-[250px]">
+          <p className="text-sm  flex items-center group-hover:opacity-50">
+            PRINTED MATTER <ChevronDown />
+          </p>
           <div className="hidden absolute bg-white top-full p-4 space-y-2 group-hover:block w-[200px]">
-            <p className="text-sm">BOOKS & BOOKLETS</p>
-            <p className="text-sm">POSTERS & PRINTS</p>
+            <p className="text-sm block py-1 ">BOOKS & BOOKLETS</p>
+            <p className="text-sm block py-1 ">POSTERS & PRINTS</p>
           </div>
         </div>
         <div className="flex justify-center items-center p-4 relative group w-[200px]">
-          <p className="text-sm">SHOWCASE</p>
+          <p className="text-sm flex items-center group-hover:opacity-50">
+            SHOWCASE <ChevronDown />
+          </p>
           <div className="hidden absolute bg-white top-full p-4 space-y-2 group-hover:block w-[200px]">
-            <p className="text-sm">EVENTS</p>
-            <p className="text-sm">RETAILERS</p>
+            <p className="text-sm block py-1 ">EVENTS</p>
+            <p className="text-sm block py-1 ">RETAILERS</p>
           </div>
         </div>
         <div className="flex justify-center items-center p-4 relative group w-[200px]">
-          <p className="text-sm">INFO</p>
+          <p className="text-sm flex items-center group-hover:opacity-50">
+            INFO <ChevronDown />
+          </p>
           <div className="hidden absolute bg-white top-full p-4 space-y-2 group-hover:block w-[200px]">
-            <p className="text-sm">ABOUT OMOCAT</p>
-            <p className="text-sm">CONTACT US</p>
-            <p className="text-sm">FAQ</p>
+            <p className="text-sm block py-1 ">ABOUT OMOCAT</p>
+            <p className="text-sm block py-1 ">CONTACT US</p>
+            <p className="text-sm block py-1 ">FAQ</p>
           </div>
         </div>
       </div>

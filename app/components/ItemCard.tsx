@@ -1,31 +1,56 @@
-import React from "react";
+// components/ItemCard.tsx
+import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ItemCardProps {
-  itemImage: string;
+  itemUrl: string;
+  itemImages: string[];
   itemName: string;
   itemPrice: string;
 }
 
-const ItemCard = ({ itemImage, itemName, itemPrice }: ItemCardProps) => {
-  return (
-    <div className="pl-10 w-[250px]">
-      <Image
-        src={itemImage}
-        alt="itemImage"
-        width={0}
-        height={0}
-        sizes="100vw"
-        style={{
-          width: "100%",
-          height: "350px",
-          objectFit: "cover",
-        }}
-      />
+const ItemCard: React.FC<ItemCardProps> = ({
+  itemUrl,
+  itemImages,
+  itemName,
+  itemPrice,
+}: ItemCardProps) => {
+  const [isHovered, setIsHovered] = useState(false);
 
-      <p className="">{itemName}</p>
-      <p>$ {itemPrice}</p>
-    </div>
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  return (
+    <Link href={itemUrl} passHref>
+      <div
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        style={{ position: "relative" }}
+      >
+        <Image
+          src={
+            isHovered && itemImages.length > 1 ? itemImages[1] : itemImages[0]
+          }
+          alt={itemName}
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{
+            width: "100%",
+            height: "450px",
+            objectFit: "cover",
+          }}
+        />
+        <h2>{itemName}</h2>
+        <p>{itemPrice}</p>
+      </div>
+    </Link>
   );
 };
 
