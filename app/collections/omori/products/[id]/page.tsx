@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Quantity from "../../../../components/Quantity"; // Assuming your Quantity component is named Page
 import ItemData from "../../../../data/collections/omori/items.json";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { MapPin, MailOpen } from "lucide-react";
+import { CartItem } from "@/app/interfaces/CartStore";
 
 const OmoriItem = ({ params: { id } }: { params: { id: string } }) => {
   const item = ItemData.find((item) => item.id.toString() === id);
@@ -55,13 +56,14 @@ const OmoriItem = ({ params: { id } }: { params: { id: string } }) => {
       <div className="flex flex-col">
         <div className="flex flex-col h-full bg-gray-100 basis-1/2 text-black p-10 w-auto ">
           <p className="text-lg ">{item?.title}</p>
-          <p className="text-2xl py-4">{item?.price}</p>
+          <p className="text-2xl py-4">$ {item?.price}</p>
           <p className="text-xs py-4">Quantity</p>
           <Quantity
             itemId={{
               itemName: item?.id,
               itemPrice: item?.price,
               itemImage: item?.images[0],
+              quantity: 1, // Add the quantity property with a default value of 1
             }}
           />
           <div className="py-4"></div>

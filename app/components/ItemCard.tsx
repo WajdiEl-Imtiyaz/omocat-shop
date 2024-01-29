@@ -48,7 +48,7 @@ const ItemCard: React.FC<ItemCardProps> = ({
           }}
         />
         <h2>{itemName}</h2>
-        <p>{itemPrice}</p>
+        <p>$ {itemPrice}</p>
       </div>
     </Link>
   );

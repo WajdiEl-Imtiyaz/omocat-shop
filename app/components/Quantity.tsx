@@ -28,7 +28,9 @@ const Quantity = observer(({ itemId }: { itemId: CartItem }) => {
       </div>
       <button
         className="bg-black w-full py-3 text-sm text-white text-center hover:opacity-50"
-        onClick={() => CartStore.addtoCart(itemId)}
+        onClick={() => {
+          CartStore.addtoCart(itemId, value);
+        }}
       >
         ADD TO CART
       </button>

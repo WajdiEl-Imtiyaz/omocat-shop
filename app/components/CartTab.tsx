@@ -1,17 +1,29 @@
+"use client";
 import { ShoppingCart, X } from "lucide-react";
 import React, { useState, useRef, useEffect } from "react";
-import ItemData from "../data/collections/omori/items.json";
 import Image from "next/image";
-import { title } from "process";
 import CartStore from "../interfaces/CartStore";
+import { CartItem } from "../interfaces/CartStore";
 import { observer } from "mobx-react";
 
 const CartTab = observer(() => {
+  const [clientcart, setClientCart] = useState<CartItem[]>([]);
+
+  useEffect(() => {
+    const storedcart = localStorage.getItem("cartItems");
+    setClientCart(storedcart ? JSON.parse(storedcart) : []);
+  }, []);
+
+  const refreshCart = () => {
+    setClientCart(JSON.parse(localStorage.getItem("cartItems") || "[]"));
+  };
+
   const [isTabVisible, setTabVisible] = useState(false);
   const tabRef = useRef(null);
 
   const handleIconClick = () => {
     setTabVisible(!isTabVisible);
+    refreshCart();
   };
 
   useEffect(() => {
@@ -49,28 +61,53 @@ const CartTab = observer(() => {
           </button>
         </div>
         <div className="text-center text-black w-full">
-          {CartStore.cartItems.length === 0 ? (
+          {clientcart.length === 0 ? (
             <p>Your cart is currently empty.</p>
           ) : (
-            CartStore.cartItems.map((item, index) => (
-              <div key={index} className="flex items-center w-full">
-                <Image
-                  src={item.itemImage}
-                  alt="omocat"
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                  style={{
-                    width: "10%",
-                    height: "10%",
-                  }}
-                />
-                <div className="ml-4 text-center w-full">
-                  <p>{item.itemName}</p>
-                  <p>{item.itemPrice}</p>
+            <>
+              {clientcart.map((item, index) => (
+                <div key={index} className="flex items-center w-full">
+                  <Image
+                    src={item.itemImage}
+                    alt="omocat"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    style={{
+                      width: "20%",
+                      height: "20%",
+                    }}
+                  />
+                  <div className="ml-4 text-center w-full">
+                    <p className="p-2 text-sm">{item.itemName}</p>
+                    <p className="p-2 text-sm">$ {item.itemPrice}</p>
+                    <p className="p-2">Quantity: {item.quantity}</p>
+                    <button
+                      onClick={() => {
+                        CartStore.removeFromCart(item.itemName);
+                        refreshCart();
+                      }}
+                      className="px-4 text-sm underline"
+                    >
+                      Remove
+                    </button>
+                  </div>
                 </div>
+              ))}
+              <div>
+                <p className="text-xs p-2">SUBTOTAL </p>
+                <p className="text-xl p-2">
+                  $
+                  {clientcart
+                    .reduce(
+                      (total, item) =>
+                        total + Number(item.itemPrice) * Number(item.quantity),
+                      0
+                    )
+                    .toFixed(2)}
+                </p>
               </div>
-            ))
+            </>
           )}
         </div>
       </div>
