@@ -5,6 +5,7 @@ import Image from "next/image";
 import CartStore from "../interfaces/CartStore";
 import { CartItem } from "../interfaces/CartStore";
 import { observer } from "mobx-react";
+import Link from "next/link";
 
 const CartTab = observer(() => {
   const [clientcart, setClientCart] = useState<CartItem[]>([]);
@@ -106,6 +107,13 @@ const CartTab = observer(() => {
                     )
                     .toFixed(2)}
                 </p>
+              </div>
+              <div className="p-4">
+                <Link href="/checkout">
+                  <button className="px-8 py-4 bg-black text-white text-sm">
+                    CHECK OUT
+                  </button>
+                </Link>
               </div>
             </>
           )}
