@@ -1,13 +1,13 @@
 import Image from "next/image";
-import GamersCarousel from "./components/GamersCarousel";
-import OmoriCarousel from "./components/OmoriCarousel";
+import GamersCarousel from "../components/GamersCarousel";
+import OmoriCarousel from "../components/OmoriCarousel";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Banner1Full from "../public/img/collection1_sm_small1_2000x.jpg";
-import Banner2Full from "../public/img/211008_Omocat_0197_collab_2000x.jpg";
-import Banner3Full from "../public/img/drawfest_banner_4_2000x.png";
-import Banner4Full from "../public/img/220321_OMOCAT__8244_small_c4b70499-8bcb-4bfb-a897-de69ee563931_2000x.jpg";
+import Banner1Full from "../../public/img/collection1_sm_small1_2000x.jpg";
+import Banner2Full from "../../public/img/211008_Omocat_0197_collab_2000x.jpg";
+import Banner3Full from "../../public/img/drawfest_banner_4_2000x.png";
+import Banner4Full from "../../public/img/220321_OMOCAT__8244_small_c4b70499-8bcb-4bfb-a897-de69ee563931_2000x.jpg";
 import Link from "next/link";
 
 export default function Home() {

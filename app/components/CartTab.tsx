@@ -109,7 +109,7 @@ const CartTab = observer(() => {
                 </p>
               </div>
               <div className="p-4">
-                <Link href="/checkout">
+                <Link href="/checkout/information">
                   <button className="px-8 py-4 bg-black text-white text-sm">
                     CHECK OUT
                   </button>

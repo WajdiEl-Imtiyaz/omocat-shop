@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Quantity from "../../../../components/Quantity"; // Assuming your Quantity component is named Page
-import ItemData from "../../../../data/collections/omori/items.json";
+import Quantity from "../../../../../components/Quantity"; // Assuming your Quantity component is named Page
+import ItemData from "../../../../../data/collections/omori/items.json";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { MapPin, MailOpen } from "lucide-react";

@@ -1,5 +1,4 @@
 import { makeObservable, observable, action, runInAction } from "mobx";
-import Cookies from "js-cookie";
 
 export interface CartItem {
   itemName: string;
@@ -67,4 +66,5 @@ class CartStore {
   }
 }
 
-export default new CartStore();
+const cartStoreInstance = new CartStore();
+export default cartStoreInstance;

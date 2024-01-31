@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import ItemList from "../../data/collections/omori/items.json";
-import ItemCard from "../../components/ItemCard";
+import ItemList from "../../../data/collections/omori/items.json";
+import ItemCard from "../../../components/ItemCard";
 
 const omori = () => {
   return (

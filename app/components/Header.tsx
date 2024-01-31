@@ -15,7 +15,7 @@ const Header = () => {
         <div></div>{" "}
         {/* This empty div is needed to balance the space distribution */}
         <div className="pl-64 flex justify-center items-center">
-          <a href="/">
+          <Link href="/">
             <Image
               src="/img/omocat_logo_original_400_53040177-83e4-4a16-bdd6-e5c2f4a7eb5a.png"
               alt="omocat"
@@ -27,7 +27,7 @@ const Header = () => {
                 height: "50%",
               }}
             />
-          </a>
+          </Link>
         </div>
         <div className=" flex flex-row items-center justify justify-between ">
           <div className="flex justify-center p-6">
@@ -51,6 +51,12 @@ const Header = () => {
             COLLECTIONS <ChevronDown />
           </p>
           <div className="hidden absolute bg-white top-full p-4 space-y-2 group-hover:block w-[200px] transition">
+            <Link
+              href="/collections/omori"
+              className="text-sm block py-1  hover:opacity-50"
+            >
+              OMORI
+            </Link>
             <Link href="#" className="text-sm block py-1 ">
               HOLOLIVE GAMERS
             </Link>
@@ -59,12 +65,6 @@ const Header = () => {
             </Link>
             <Link href="#" className="text-sm block py-1  ">
               HOLOLIVE EN
-            </Link>
-            <Link
-              href="/collections/omori"
-              className="text-sm block py-1  hover:opacity-50"
-            >
-              OMORI
             </Link>
             <Link href="#" className="text-sm block py-1  ">
               BANG DREAM!
